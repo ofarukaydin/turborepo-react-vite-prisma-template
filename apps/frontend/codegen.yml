@@ -4,6 +4,8 @@ documents: "src/graphql/**/*.graphql"
 generates:
   src/graphql/generated/index.ts:
     plugins:
+      - add:
+          content: '// @ts-nocheck'
       - "typescript"
       - "typescript-operations"
       - typescript-react-query
