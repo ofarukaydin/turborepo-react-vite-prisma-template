@@ -1,0 +1,8 @@
+mutation DeleteContactById($deleteContactByIdId: String!) {
+  deleteContactById(id: $deleteContactByIdId) {
+    id
+    firstname
+    lastname
+    number
+  }
+}

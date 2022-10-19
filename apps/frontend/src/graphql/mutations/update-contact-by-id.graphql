@@ -1,0 +1,8 @@
+mutation UpdateContactByIdMutation($contactInfo: UpdateContactInput!) {
+  updateContactById(contactInfo: $contactInfo) {
+    id
+    firstname
+    lastname
+    number
+  }
+}

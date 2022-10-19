@@ -1,0 +1,8 @@
+query GetAllContacts {
+  getAllContacts {
+    id
+    firstname
+    lastname
+    number
+  }
+}

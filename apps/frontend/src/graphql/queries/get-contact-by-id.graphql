@@ -1,0 +1,8 @@
+query GetContactById($id: String!) {
+  getContactById(id: $id) {
+    id
+    firstname
+    lastname
+    number
+  }
+}
