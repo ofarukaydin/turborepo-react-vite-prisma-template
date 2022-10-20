@@ -1,8 +1,8 @@
 version: '3.9'
 services:
-  #turborepo
-  turbo:
-    container_name: fullstack
+  # turborepo dev
+  turborepo:
+    container_name: dev
     build:
       context: .
       dockerfile: dev.Dockerfile
@@ -13,8 +13,33 @@ services:
       - ./:/app/
        # Just specify a path and let the Engine create a volume
       - /app/node_modules/
-    platform: "linux/amd64"
     restart: on-failure
+
+  # backend:
+  #   container_name: backend
+  #   build:
+  #     context: .
+  #     dockerfile: backend_prod.Dockerfile
+  #   ports:
+  #     - "3001:3001"
+  #   volumes:
+  #     - ./:/app/
+  #      # Just specify a path and let the Engine create a volume
+  #     - /app/node_modules/
+  #   restart: on-failure
+
+  # frontend:
+  #   container_name: frontend
+  #   build:
+  #     context: .
+  #     dockerfile: frontend_prod.Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./:/app/
+  #      # Just specify a path and let the Engine create a volume
+  #     - /app/node_modules/
+  #   restart: on-failure
 
 networks:
   turbo-network:

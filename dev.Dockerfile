@@ -1,25 +1,17 @@
-FROM node:19.0.0-bullseye
+FROM node:18-slim AS base
+RUN apt-get update
+RUN apt-get install -y openssl
 
-ARG NODE_ENV=production
-
-RUN yarn global add pnpm serve
-RUN yarn global add turbo@1.5.5
-
-# Set working directory
+RUN yarn global add pnpm
 WORKDIR /app
-
-# Install app dependencies
-COPY  ["pnpm-lock.yaml", "package.json", "./"]
-
-# Copy source files
 COPY . .
 
-# Install app dependencies
 RUN pnpm install
-# RUN pnpm migrate:dev
-# RUN pnpm build
+RUN pnpm generate:prisma
+RUN pnpm migrate:dev
 
-# EXPOSE 3000 3001
+EXPOSE 3000
+EXPOSE 3001
 
-# RUN serve /app/apps/frontend/dist
-# CMD ["node", "/app/apps/backend/dist/app.js"]
+CMD ["pnpm", "dev"]
+

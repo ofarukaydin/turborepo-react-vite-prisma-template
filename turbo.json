@@ -11,8 +11,8 @@
     "dev": {
       "cache": false
     },
-    "migrate:dev": {
-      "cache": false
-    }
+    "migrate:dev": {},
+    "generate:prisma": {},
+    "clean": {}
   }
 }
