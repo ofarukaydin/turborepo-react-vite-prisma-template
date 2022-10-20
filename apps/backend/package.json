@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src && yarn format",
+    "lint": "eslint --fix src && yarn format",
     "lint:strict": "eslint --max-warnings=0 src",
     "type:check": "tsc --noEmit --incremental false",
     "format:check": "prettier -c src",

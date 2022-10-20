@@ -4,8 +4,8 @@
   "scripts": {
     "build": "npm run typecheck && vite build",
     "dev": "vite --host",
-    "format": "prettier . --write --ignore-path .gitignore && git update-index --again",
-    "lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
+    "format": "prettier . --write && git update-index --again",
+    "lint": "eslint . --ext .ts,.tsx --fix",
     "serve": "npm run build && vite preview --port 3000",
     "typecheck": "tsc --noEmit",
     "generate": "graphql-codegen --require dotenv/config --config codegen.yml dotenv_config_path=.env",

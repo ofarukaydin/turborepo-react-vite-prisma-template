@@ -6,8 +6,8 @@ interface SearchContext {
   setFilter: (val: string) => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SearchContext = createContext<SearchContext>(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   null as any as SearchContext
 );
 

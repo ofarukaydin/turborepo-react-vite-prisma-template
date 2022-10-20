@@ -12,7 +12,6 @@ This is a monorepo -turborepo to be exact- uses [pnpm](https://pnpm.io) as a pac
 - Frontend port: 3000
 - Backend port :3001
 
-
 ### Build
 
 To build all apps and packages, run the following command:

@@ -1,11 +1,10 @@
 import { Container } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 import { ContactContainer } from "@/components/contacts/container";
+import { queryClient } from "@/utils/react-query-client";
 import { SearchContextWrapper } from "@/utils/search-value.context";
-
-const queryClient = new QueryClient();
 
 export default function App() {
   return (

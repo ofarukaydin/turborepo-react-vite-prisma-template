@@ -5,18 +5,6 @@ import { useState } from "react";
 import { useCreateContactMutation } from "@/graphql/generated";
 import { gqlClient } from "@/utils/graphql-client";
 
-const style = {
-  position: "absolute" as const,
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
 export const AddContact = (): JSX.Element => {
   const [showAddContact, setShowAddContact] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -70,7 +58,7 @@ export const AddContact = (): JSX.Element => {
           border="1px solid #ABAFB5"
           borderRadius={2}
           padding={2}
-          sx={style}
+          sx={modalStyle}
         >
           <Typography variant="h4">Add new contact</Typography>
           <Stack direction="column" spacing={2}>
@@ -109,4 +97,16 @@ export const AddContact = (): JSX.Element => {
       </Modal>
     </Stack>
   );
+};
+
+const modalStyle = {
+  position: "absolute" as const,
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
 };
