@@ -12,6 +12,34 @@ This is a monorepo -turborepo to be exact- uses [pnpm](https://pnpm.io) as a pac
 - Frontend port: 3000
 - Backend port :3001
 
+### Develop
+
+Install dependencies
+
+```
+pnpm install
+```
+
+Generate prisma client
+
+```
+pnpm migrate:dev
+```
+
+Run all apps in dev mode
+
+```
+pnpm dev
+```
+
+If you want to develop all apps and packages inside a docker container instead, run the following command:
+
+```
+docker-compose up -d
+```
+
+From there you can use vscode remote extension to connent to the container.
+
 ### Build
 
 To build all apps and packages, run the following command:
@@ -19,19 +47,3 @@ To build all apps and packages, run the following command:
 ```
 pnpm build
 ```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-pnpm dev
-```
-
-To develop all apps and packages inside a docker container, run the following command:
-
-```
-docker-compose up -d
-```
-
-From there you can use vscode remote extension to connent to the container.
